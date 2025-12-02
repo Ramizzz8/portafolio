@@ -40,9 +40,15 @@
             margin: 20px;
             background-color: #1b273b;
             border-radius: 10px;
-            border: 5px solid #000000;
             border-radius: 5px;
-        }
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s;
+          }
+          .trabajos:hover {
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+            background-color: #243148;
+          }
         .profile {
             text-align: center;
             padding: 50px 20px;
@@ -61,9 +67,10 @@
         }
         .profile img {
             width: 400px;
-            height: 450px;
+            height: 400px;
             border-radius: 50%;
             margin-bottom: 20px;
+            object-fit: cover;
         }
         .roles {
             font-size: 0.9rem;
@@ -104,6 +111,16 @@
             margin: 0 10px;
             transition: transform 0.3s;
         }
+        alog a:hover img {
+            transform: scale(1.2);
+        }
+        #imagencode {
+            display: block;
+            margin: 0 auto;
+            max-width: 20%;
+            height: auto;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -116,9 +133,10 @@
               <a href="https://github.com/Ramizzz8">
                 <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" id="github">
               </a>
-              <a href="mailto:tucorreo@dominio.com?subject=Consulta%20desde%20tu%20portafolio&body=Hola%20Andrés,%20me%20gustaría%20hablar...">
+              <a href="mailto:ajulianrague@gmail.com?subject=Consulta%20desde%20tu%20portafolio&body=Hola%20Andr%C3%A9s%2C%20me%20gustar%C3%ADa%20hablar...">
                 <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" id="gmail" alt="Gmail Icon">
               </a>
+            </alog>
           </About>
         </nav>
     </header>
@@ -127,12 +145,18 @@
       <img src="ajrg2.jpeg">
         <h1>ANDRÉS <span>RAMÍREZ</span></h1>
         <p>Desarrollador de Aplicaciones Web</p>
-        <p class="roles">HTML | CSS | JavaScript | Python | SQL</p>
+        <div class="roles">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML Logo"/>
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS Logo"/>
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png" alt="JavaScript Logo" />
+            <img src="https://cdn-icons-png.flaticon.com/512/6132/6132220.png" alt="Python Logo" />
+            <img src="https://cdn-icons-png.flaticon.com/512/Database/sql.png" alt="SQL Logo"/>
+        </div>
     </section>
     <section id="titulotrabajos">
         <h2>TRABAJOS</h2>
-        <img src="code.jpeg" alt="">
     </section>
+    <img src="code.jpeg" id="imagencode">
     <section class="trabajos">
         <h3>Proyecto Destacado: Sistema de Gestión de Inventarios</h3>
         <article>
