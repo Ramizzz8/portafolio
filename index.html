@@ -1,174 +1,227 @@
-
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio de Andrés Julián Ramírez Guerrero</title>
     <style>
-        @font-face {
+      @font-face {
         font-family: 'Bebas Neue';
         src: url(BebasNeue-Regular.otf);
-       }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0d1b2a;
-            color: #fff;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            background-color: #1b273b;
-            font-family: 'Bebas Neue';
-        }
-        header img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        .trabajos{
-            padding: 20px;
-            margin: 20px;
-            background-color: #1b273b;
-            border-radius: 10px;
-            border-radius: 5px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: box-shadow 0.3s;
-            max-width: 800px;
-            margin: 50px auto;
-        }
-          .trabajos:hover {
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
-            background-color: #243148;
-          }
-        .profile {
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .profile h1 {
-            font-size: 6rem;
-            font-weight: bold;
-            font-family: Bebas Neue;
-        }
-        .profile h1 span {
-            color: #e63946;
-        }
-        .profile p{
-            font-size: 1.5rem;
-            margin: 10px 0;
-        }
-        .profile span{
-            color:#e63946 ;
-        }
-        .profile img {
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-        .roles img {
-            justify-content: center;
-            object-fit: cover;
-            border-radius: 5px;
-            padding-top: 50px;
-        }
-        .trabajos h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-family: Bebas Neue;
-        }
-        #titulotrabajos img {
-            max-width: 20%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 10px;
-            align-items: center;
-        }
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #0d1b2a;
+        color: #fff;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        background-color: #1b273b;
+        font-family: 'Bebas Neue';
+      }
+      header img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+        transition: transform 0.3s;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+      .trabajos {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: #1b273b;
+        border-radius: 10px;
+        border-radius: 5px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s;
+        max-width: 900px;
+        margin: 50px auto;
+      }
 
-        #titulotrabajos {
-            text-align: center;
-            margin-bottom: 40px;
-            font-family: Bebas Neue;
-            font-size: 2rem;
-        }
-        .trabajos h3 {
-            margin-top: 15px;
-            font-size: 1.5rem;
-        }
-        #linkedin, #github, #gmail {
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
-            transition: transform 0.3s;
-        }
-        alog a:hover img {
-            transform: scale(1.2);
-        }
-        #imagencode {
-            display: block;
-            margin: 0 auto;
-            max-width: 20%;
-            height: auto;
-            border-radius: 10px;
-        }
+      .trabajos .imagen-trabajo {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .trabajos:nth-of-type(odd) .contenido {
+        padding-right: 8px;
+      }
+      .trabajos:nth-of-type(even) .contenido {
+        padding-left: 8px;
+      }
+
+      .trabajos .contenido {
+        flex: 1;
+      }
+      .trabajos:hover {
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+        background-color: #243148;
+      }
+      .profile {
+        text-align: center;
+        padding: 50px 20px;
+      }
+      .profile h1 {
+        font-size: 6rem;
+        font-weight: bold;
+        font-family: Bebas Neue;
+      }
+      .profile h1 span {
+        color: #e63946;
+      }
+      .profile p {
+        font-size: 1.5rem;
+        margin: 10px 0;
+      }
+      .profile span {
+        color: #e63946;
+      }
+      .profile img {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        object-fit: cover;
+      }
+      .roles img {
+        justify-content: center;
+        object-fit: cover;
+        border-radius: 5px;
+        padding-top: 50px;
+      }
+      .trabajos h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-family: Bebas Neue;
+      }
+      #titulotrabajos {
+        text-align: center;
+        margin-bottom: 40px;
+        font-family: Bebas Neue;
+        font-size: 2rem;
+      }
+      .trabajos h3 {
+        margin-top: 15px;
+        font-size: 1.5rem;
+      }
+      alog a:hover img {
+        transform: scale(1.2);
+      }
+      #imagencode {
+        display: block;
+        margin: 0 auto;
+        max-width: 20%;
+        height: auto;
+        border-radius: 10px;
+      }
+      .divt {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .trabajos:nth-child(odd) {
+        align-self: start;
+        margin-top: 80px;
+        margin-left: 350px;
+      }
+
+      .trabajos:nth-child(even) {
+        align-self: end;
+        margin-top: 80px;
+        margin-right: 350px;
+      }
+
+      .divt img {
+        width: 200px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-          <About>
-            <alog>
-              <a href = "https://www.linkedin.com/in/andresrague-undefined-011936349/">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" id="linkedin">
-              </a>
-              <a href="https://github.com/Ramizzz8">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" id="github">
-              </a>
-              <a href="mailto:ajulianrague@gmail.com?subject=Consulta%20desde%20tu%20portafolio&body=Hola%20Andr%C3%A9s%2C%20me%20gustar%C3%ADa%20hablar...">
-                <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" id="gmail" alt="Gmail Icon">
-              </a>
-            </alog>
-          </About>
-        </nav>
+      <nav>
+        <a href="https://www.linkedin.com/in/andresrague-undefined-011936349/">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" id="linkedin" />
+        </a>
+        <a href="https://github.com/Ramizzz8">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" id="github" />
+        </a>
+        <a
+          href="mailto:ajulianrague@gmail.com?subject=Consulta%20desde%20tu%20portafolio&body=Hola%20Andr%C3%A9s%2C%20me%20gustar%C3%ADa%20hablar..."
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/281/281769.png"
+            id="gmail"
+            alt="Gmail Icon"
+          />
+        </a>
+      </nav>
     </header>
-
     <section class="profile">
-      <img src="ajrg2.jpeg">
-        <h1>ANDRÉS <span>RAMÍREZ</span></h1>
-        <p><span>Desarrollador</span> de Aplicaciones Web</p>
-        <div class="roles">
-            <img src="html5bg.png" alt="HTML Logo" style="width:150px; height:150px;"/>
-            <img src="css.png" alt="CSS Logo" style="width:150px; height:150px;"/>
-            <img src="javascript.png" alt="JavaScript Logo" style="width:150px; height:150px;"/>
-            <img src="python-removebg-preview.png" alt="Python Logo" style="width:150px; height:150px;"/>
-            <img src="mysql.png" alt="SQL Logo" style="width:150px; height:150px;"/>
-        </div>
+      <img src="ajrg2.jpeg" />
+      <h1>ANDRÉS <span>RAMÍREZ</span></h1>
+      <p><span>Desarrollador</span> de Aplicaciones Web</p>
+      <div class="roles">
+        <img src="html5bg.png" alt="HTML Logo" style="width: 150px; height: 150px" />
+        <img src="css.png" alt="CSS Logo" style="width: 150px; height: 150px" />
+        <img src="javascript.png" alt="JavaScript Logo" style="width: 150px; height: 150px" />
+        <img
+          src="python-removebg-preview.png"
+          alt="Python Logo"
+          style="width: 150px; height: 150px"
+        />
+        <img src="mysql.png" alt="SQL Logo" style="width: 150px; height: 150px" />
+      </div>
     </section>
     <section id="titulotrabajos">
-        <h2>TRABAJOS</h2>
+      <h2>TRABAJOS</h2>
     </section>
-    <img src="code.jpeg" id="imagencode">
-    <section class="trabajos">
-        <h3>Proyecto De Sistema de Gestión de Inventarios</h3>
-        <article>
-          <p>Desarrollé un sistema completo de gestión de inventarios utilizando HTML, CSS y JavaScript para el frontend, y Python con Flask para el backend. El sistema permite a los usuarios agregar, actualizar y eliminar productos, así como generar informes detallados sobre el estado del inventario.</p>
-        </article>
-    </section>
-    <section class="trabajos">
-        <h3>Proyecto De Sitio Web de Comercio Electrónico</h3>
-        <article>
-          <p>Creé un sitio web de comercio electrónico responsivo utilizando HTML5, CSS3 y JavaScript. Implementé características como un carrito de compras, pasarela de pago y sistema de gestión de usuarios. El sitio está optimizado para SEO y ofrece una experiencia de usuario fluida en dispositivos móviles y de escritorio.</p>
-      </article>
-    </section>
-
+    <img src="code.jpeg" id="imagencode" />
+    <div class="divt">
+      <section class="trabajos" id="t1">
+        <div class="contenido">
+          <h3>Proyecto De Sistema de Gestión de Inventarios</h3>
+          <article>
+            <p>
+              Desarrollé un sistema completo de gestión de inventarios utilizando HTML, CSS y
+              JavaScript para el frontend, y Python con Flask para el backend. El sistema permite a
+              los usuarios agregar, actualizar y eliminar productos, así como generar informes
+              detallados sobre el estado del inventario.
+            </p>
+          </article>
+        </div>
+        <img src="code.jpeg" />
+      </section>
+      <section class="trabajos" id="t2">
+        <div class="contenido">
+          <img src="code.jpeg" />
+          <h3>Proyecto De Sitio Web de Comercio Electrónico</h3>
+          <article>
+            <p>
+              Creé un sitio web de comercio electrónico responsivo utilizando HTML5, CSS3 y
+              JavaScript. Implementé características como un carrito de compras, pasarela de pago y
+              sistema de gestión de usuarios. El sitio está optimizado para SEO y ofrece una
+              experiencia de usuario fluida en dispositivos móviles y de escritorio.
+            </p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
