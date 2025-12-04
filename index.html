@@ -19,18 +19,19 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 50px;
+        padding: 20px 50px;
         background-color: #1b273b;
         font-family: 'Bebas Neue';
       }
       header img {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
         width: 30px;
         height: 30px;
-        margin: 0 10px;
+        margin: 0;
         transition: transform 0.3s;
+      }
+      .navegacion {
+        display: flex;
+        align-items: center;
       }
       nav a {
         color: #fff;
@@ -101,10 +102,16 @@
         object-fit: cover;
       }
       .roles img {
-        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 0 !important;
         object-fit: cover;
-        border-radius: 5px;
-        padding-top: 50px;
+      }
+      .roles {
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
       }
       .trabajos h2 {
         font-size: 2rem;
@@ -144,41 +151,47 @@
 
       .trabajos:nth-child(even) {
         align-self: end;
-        margin-top: 80px;
+        margin-top: 25px;
         margin-right: 350px;
       }
 
       .divt img {
-        width: 200px;
+        width: 400px;
       }
     </style>
   </head>
   <body>
     <header>
       <nav>
-        <a href="https://www.linkedin.com/in/andresrague-undefined-011936349/">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" id="linkedin" />
-        </a>
-        <a href="https://github.com/Ramizzz8">
-          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" id="github" />
-        </a>
-        <a
-          href="mailto:ajulianrague@gmail.com?subject=Consulta%20desde%20tu%20portafolio&body=Hola%20Andr%C3%A9s%2C%20me%20gustar%C3%ADa%20hablar..."
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/281/281769.png"
-            id="gmail"
-            alt="Gmail Icon"
-          />
-        </a>
+        <section>
+          <a href="https://www.linkedin.com/in/andresrague-undefined-011936349/">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" id="linkedin" />
+          </a>
+          <a href="https://github.com/Ramizzz8">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" id="github" />
+          </a>
+          <a
+            href="mailto:ajulianrague@gmail.com?subject=Consulta%20desde%20tu%20portafolio&body=Hola%20Andr%C3%A9s%2C%20me%20gustar%C3%ADa%20hablar..."
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/281/281769.png"
+              id="gmail"
+              alt="Gmail Icon"
+            />
+          </a>
+        </section>
       </nav>
+      <section class="navegacion">
+        <a href="#titulotrabajos">Trabajos</a>
+        <a href="https://ramizzz8.github.io/Curriculum/">Curriculum</a>
+      </section>
     </header>
     <section class="profile">
       <img src="ajrg2.jpeg" />
       <h1>ANDRÉS <span>RAMÍREZ</span></h1>
       <p><span>Desarrollador</span> de Aplicaciones Web</p>
       <div class="roles">
-        <img src="html5bg.png" alt="HTML Logo" style="width: 150px; height: 150px" />
+        <img src="logo-de-html.png" alt="HTML Logo" style="width: 150px; height: 150px" />
         <img src="css.png" alt="CSS Logo" style="width: 150px; height: 150px" />
         <img src="javascript.png" alt="JavaScript Logo" style="width: 150px; height: 150px" />
         <img
@@ -186,7 +199,7 @@
           alt="Python Logo"
           style="width: 150px; height: 150px"
         />
-        <img src="mysql.png" alt="SQL Logo" style="width: 150px; height: 150px" />
+        <img src="sqlogo.png" alt="SQL Logo" style="width: 150px; height: 150px" />
       </div>
     </section>
     <section id="titulotrabajos">
@@ -209,8 +222,8 @@
         <img src="code.jpeg" />
       </section>
       <section class="trabajos" id="t2">
+        <img src="code.jpeg" />
         <div class="contenido">
-          <img src="code.jpeg" />
           <h3>Proyecto De Sitio Web de Comercio Electrónico</h3>
           <article>
             <p>
