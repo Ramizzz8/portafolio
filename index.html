@@ -4,10 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio de Andrés Julián Ramírez Guerrero</title>
+
     <style>
+      /* Fuente */
       @font-face {
         font-family: 'Bebas Neue';
-        src: url(BebasNeue-Regular.otf);
+        src: url('./BebasNeue-Regular.otf') format('opentype');
+      }
+
+      /* Animación */
+      @keyframes fadeSlide {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate {
+        opacity: 0;
+        animation: fadeSlide 1s ease-out forwards;
       }
 
       body {
@@ -19,17 +38,18 @@
 
       /* Header */
       header {
+        position: relative; /* necesario para que la navegación absoluta funcione */
         display: flex;
         align-items: center;
-        justify-content: space-between;
         padding: 20px 50px;
         background-color: #1b273b;
-        font-family: 'Bebas Neue';
-        position: relative;
         flex-wrap: wrap;
       }
 
-      /* Redes sociales */
+      header nav {
+        z-index: 1; /* para que quede encima si se solapa */
+      }
+
       header nav img {
         width: 30px;
         height: 30px;
@@ -43,24 +63,18 @@
         filter: brightness(1.3);
       }
 
-      /* Navegación centrada */
       .navegacion {
+        position: absolute; /* se saca del flujo */
+        left: 50%; /* empieza a la mitad */
+        transform: translateX(-50%); /* centra */
         display: flex;
         gap: 30px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 1.8rem;
+        font-size: 2rem;
+        z-index: 1;
       }
 
-      .navegacion a,
-      .navegacion a:link,
-      .navegacion a:visited {
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 2rem;
-        font-weight: bold;
-        line-height: 1;
-        letter-spacing: normal;
+      .navegacion a {
+        font-family: 'Bebas Neue';
         color: #fff;
         text-decoration: none;
         transition: all 0.3s ease;
@@ -77,15 +91,6 @@
           transform: none;
           justify-content: center;
           margin-top: 10px;
-          width: 100%;
-        }
-        header nav {
-          margin-bottom: 10px;
-        }
-        header {
-          padding: 15px 20px;
-          flex-direction: column;
-          align-items: flex-start;
         }
       }
 
@@ -93,11 +98,12 @@
       .profile {
         text-align: center;
         padding: 50px 20px;
+        animation-delay: 0.3s;
       }
 
       .profile img {
-        width: 400px;
-        height: 400px;
+        width: min(80vw, 400px);
+        height: min(80vw, 400px);
         border-radius: 50%;
         margin-bottom: 20px;
         object-fit: cover;
@@ -105,18 +111,15 @@
 
       .profile h1 {
         font-size: 6rem;
-        font-weight: bold;
         font-family: 'Bebas Neue';
       }
 
-      .profile h1 span,
       .profile span {
         color: #e63946;
       }
 
       .profile p {
         font-size: 1.5rem;
-        margin: 10px 0;
       }
 
       .roles {
@@ -124,45 +127,51 @@
         display: flex;
         justify-content: center;
         gap: 30px;
+        flex-wrap: wrap;
       }
 
       .roles img {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         object-fit: cover;
       }
 
-      /* Trabajos - Título */
+      /* Trabajos */
       #titulotrabajos {
         text-align: center;
-        margin-bottom: 40px;
+        margin: 50px 0;
         font-family: 'Bebas Neue';
-        font-size: 2rem;
+        font-size: 2.5rem;
+        animation-delay: 0.5s;
       }
 
-      /* Grid de trabajos */
       .trabajos-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 40px;
         max-width: 1000px;
-        margin: 50px auto;
+        margin: 0 auto 80px;
         padding: 0 20px;
       }
 
       .trabajo-card {
         background-color: #1b273b;
         border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         overflow: hidden;
         transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
+        animation: fadeSlide 0.8s ease-out forwards;
+        opacity: 0;
+      }
+
+      .trabajo-card:nth-child(1) {
+        animation-delay: 0.8s;
+      }
+
+      .trabajo-card:nth-child(2) {
+        animation-delay: 1s;
       }
 
       .trabajo-card:hover {
-        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
         background-color: #243148;
         transform: translateY(-5px);
       }
@@ -173,87 +182,131 @@
         object-fit: cover;
       }
 
-      .trabajo-card .contenido {
+      .contenido {
         padding: 20px;
       }
 
-      .trabajo-card h3 {
+      .contenido h3 {
         font-family: 'Bebas Neue';
         font-size: 1.8rem;
-        margin-bottom: 10px;
       }
 
-      .trabajo-card p {
-        font-size: 1rem;
+      .contenido p {
         line-height: 1.5;
-        color: #fff;
       }
     </style>
   </head>
+
   <body>
-    <header>
-      <nav>
-        <section>
-          <a href="https://www.linkedin.com/in/andresrague-undefined-011936349/">
-            <img src="linkedin.png" alt="LinkedIn" />
-          </a>
-          <a href="https://github.com/Ramizzz8">
-            <img src="github.png" alt="GitHub" />
-          </a>
-          <a
-            href="mailto:ajulianrague@gmail.com?subject=Consulta%20desde%20tu%20portafolio&body=Hola%20Andrés,%20me%20gustaría%20hablar..."
-          >
-            <img src="mail.png" alt="Gmail" />
-          </a>
-        </section>
+    <header class="animate">
+      <nav aria-label="Redes sociales">
+        <ul style="display: flex; gap: 10px; padding: 0; margin: 0; list-style: none">
+          <li>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <img src="linkedin.png" alt="LinkedIn" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <img src="github.png" alt="GitHub" />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:ajulianrague@gmail.com" aria-label="Enviar correo">
+              <img src="mail.png" alt="Email" />
+            </a>
+          </li>
+        </ul>
       </nav>
+
       <section class="navegacion">
         <a href="#titulotrabajos">Trabajos</a>
         <a href="https://ramizzz8.github.io/Curriculum/">Currículum</a>
       </section>
     </header>
 
-    <section class="profile">
+    <section class="profile animate">
       <img src="ajrg2.jpeg" alt="Foto de perfil" />
       <h1>ANDRÉS <span>RAMÍREZ</span></h1>
       <p><span>Desarrollador</span> de Aplicaciones Web</p>
+
       <div class="roles">
-        <img src="logo-de-html.png" alt="HTML Logo" />
-        <img src="css.png" alt="CSS Logo" />
-        <img src="javascript.png" alt="JavaScript Logo" />
-        <img src="python-removebg-preview.png" alt="Python Logo" />
-        <img src="sqlogo.png" alt="SQL Logo" />
+        <img src="logo-de-html.png" alt="HTML" />
+        <img src="css.png" alt="CSS" />
+        <img src="javascript.png" alt="JS" />
+        <img src="python-removebg-preview.png" alt="Python" />
+        <img src="sqlogo.png" alt="SQL" />
       </div>
     </section>
 
-    <section id="titulotrabajos">
+    <section id="titulotrabajos" class="animate">
       <h2>TRABAJOS</h2>
     </section>
 
     <div class="trabajos-grid">
+      <!-- Trabajo 1: Sistema de Gestión de Inventarios -->
       <div class="trabajo-card">
-        <img src="code.jpeg" alt="Proyecto Inventario" />
+        <img src="code1.jpeg" alt="Sistema de Gestión de Inventarios" />
         <div class="contenido">
-          <h3>Proyecto De Sistema de Gestión de Inventarios</h3>
+          <h3>Sistema de Gestión de Inventarios</h3>
           <p>
-            Desarrollé un sistema completo de gestión de inventarios utilizando HTML, CSS y
-            JavaScript para el frontend, y Python con Flask para el backend. El sistema permite a
-            los usuarios agregar, actualizar y eliminar productos, así como generar informes
-            detallados sobre el estado del inventario.
+            Gestión completa de productos con HTML, CSS, JS y Python Flask. Permite agregar, editar
+            y eliminar inventario.
           </p>
+          <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Python, Flask</p>
+          <a href="#" target="_blank">Ver proyecto</a>
         </div>
       </div>
 
+      <!-- Trabajo 2: Ecommerce -->
       <div class="trabajo-card">
-        <img src="code.jpeg" alt="Proyecto Ecommerce" />
+        <img src="code2.jpeg" alt="Ecommerce" />
         <div class="contenido">
-          <h3>Proyecto De Sitio Web de Comercio Electrónico</h3>
+          <h3>Sitio Web de Comercio Electrónico</h3>
           <p>
-            Creé un sitio web de comercio electrónico responsivo utilizando HTML5, CSS3 y
-            JavaScript. Implementé características como un carrito de compras, pasarela de pago y
-            sistema de gestión de usuarios. El sitio está optimizado para SEO y ofrece una
-            experiencia de usuario fluida en dispositivos móviles y de escritorio.
+            Ecommerce responsivo con carrito de compras, pasarela de pago y experiencia optimizada
+            para móviles.
           </p>
+          <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript</p>
+          <a href="#" target="_blank">Ver proyecto</a>
+        </div>
+      </div>
+
+      <!-- Trabajo 3: Periódico -->
+      <div class="trabajo-card">
+        <img src="code3.jpeg" alt="Periódico Digital" />
+        <div class="contenido">
+          <h3>Periódico Digital</h3>
+          <p>
+            Plataforma para publicar noticias y artículos con diseño responsivo y panel de
+            administración para redactores.
+          </p>
+          <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Python</p>
+          <a href="#" target="_blank">Ver proyecto</a>
+        </div>
+      </div>
+
+      <!-- Trabajo 4: RamiSearch -->
+      <div class="trabajo-card">
+        <img src="RamiSearch.PNG" alt="RamiSearch" />
+        <div class="contenido">
+          <h3>RamiSearch</h3>
+          <p>
+            Buscador web propio, optimizado para búsquedas rápidas y resultados relevantes, con
+            diseño minimalista.
+          </p>
+          <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Python</p>
+          <a href="#" target="_blank">Ver proyecto</a>
         </div>
       </div>
     </div>
