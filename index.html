@@ -158,9 +158,8 @@
         background-color: #1b273b;
         border-radius: 15px;
         overflow: hidden;
-        transition: all 0.3s ease;
+        transition: transform 0.3s ease, background-color 0.3s ease;
         animation: fadeSlide 0.8s ease-out forwards;
-        opacity: 0;
       }
 
       .trabajo-card:nth-child(1) {
@@ -181,7 +180,21 @@
         height: 200px;
         object-fit: cover;
       }
+      /*destacado*/
+      .destacado {
+        grid-column: span 2;
+      }
+      .info-extra {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        padding: 0 20px;
+      }
 
+      .trabajo-card.activo .info-extra {
+        max-height: 300px;
+        padding: 20px;
+      }
       .contenido {
         padding: 20px;
       }
@@ -238,7 +251,7 @@
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
-              <img src="linkedin.png" alt="LinkedIn" />
+              <img src="images/linkedin.png" alt="LinkedIn" />
             </a>
           </li>
           <li>
@@ -248,7 +261,7 @@
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
-              <img src="github.png" alt="GitHub" />
+              <img src="images/github.png" alt="GitHub" />
             </a>
           </li>
           <li>
@@ -256,7 +269,7 @@
               href="mailto:ajulianrague@gmail.com?subject=Contacto%20desde%20portafolio&body=Hola%20Andres%2C%20te%20contacto%20porque%20me%20interesa%20tu%20perfil%20profesional.%0A%0AQuedo%20atento%20a%20tu%20respuesta."
               aria-label="Enviar correo"
             >
-              <img src="mail.png" alt="Email" />
+              <img src="images/mail.png" alt="Email" />
             </a>
           </li>
         </ul>
@@ -270,16 +283,16 @@
     </header>
 
     <section class="profile animate">
-      <img src="ajrg2.jpeg" alt="Foto de perfil" />
+      <img src="images/ajrg2.jpeg" alt="Foto de perfil" />
       <h1>ANDRÉS <span>RAMÍREZ</span></h1>
       <p><span>Desarrollador</span> de Aplicaciones Web</p>
 
       <div class="roles">
-        <img src="logo-de-html.png" alt="HTML" />
-        <img src="css.png" alt="CSS" />
-        <img src="javascript.png" alt="JS" />
-        <img src="python-removebg-preview.png" alt="Python" />
-        <img src="sqlogo.png" alt="SQL" />
+        <img src="images/logo-de-html.png" alt="HTML" />
+        <img src="images/css.png" alt="CSS" />
+        <img src="images/javascript.png" alt="JS" />
+        <img src="images/python-removebg-preview.png" alt="Python" />
+        <img src="images/sqlogo.png" alt="SQL" />
       </div>
     </section>
 
@@ -288,9 +301,26 @@
     </section>
 
     <div class="trabajos-grid">
+      <!-- Trabajo Destacado -->
+      <div class="trabajo-card destacado" onclick="toggleInfo()">
+        <img src="images/1-1.PNG" alt="Moves Location" />
+        <div class="contenido">
+          <h3>Moves Location</h3>
+          <p>Moves Location es una web de gestión de procesos migratorios...</p>
+          <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Python, MySQL</p>
+        </div>
+
+        <div class="info-extra" id="infoExtra">
+          <p>
+            Esta plataforma incluye: ✔ Panel de administración ✔ Gestión documental ✔ Seguimiento en
+            tiempo real ✔ Notificaciones automatizadas
+          </p>
+        </div>
+      </div>
+
       <!-- Trabajo 1: Sistema de Gestión de Inventarios -->
       <div class="trabajo-card">
-        <img src="inventario.PNG" alt="Sistema de Gestión de Inventarios" />
+        <img src="images/inventario.PNG" alt="Sistema de Gestión de Inventarios" />
         <div class="contenido">
           <h3>Sistema de Gestión de Inventarios</h3>
           <p>
@@ -304,7 +334,7 @@
 
       <!-- Trabajo 2: Ecommerce -->
       <div class="trabajo-card">
-        <img src="tienda.PNG" alt="Ecommerce" />
+        <img src="images/tienda.PNG" alt="Ecommerce" />
         <div class="contenido">
           <h3>Sitio Web de Comercio Electrónico</h3>
           <p>
@@ -318,7 +348,7 @@
 
       <!-- Trabajo 3: Periódico -->
       <div class="trabajo-card">
-        <img src="periodico.PNG" alt="Periódico Digital" />
+        <img src="images/periodico.PNG" alt="Periódico Digital" />
         <div class="contenido">
           <h3>Periódico Digital</h3>
           <p>
@@ -332,26 +362,12 @@
 
       <!-- Trabajo 4: RamiSearch -->
       <div class="trabajo-card">
-        <img src="RamiSearch.PNG" alt="RamiSearch" />
+        <img src="images/RamiSearch.PNG" alt="RamiSearch" />
         <div class="contenido">
           <h3>RamiSearch</h3>
           <p>
             Buscador web propio, optimizado para búsquedas rápidas y resultados relevantes, con
             diseño minimalista.
-          </p>
-          <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Python</p>
-          <a target="_blank"></a>
-        </div>
-      </div>
-
-      <!-- Trabajo 5: Moves Location -->
-      <div class="trabajo-card">
-        <img src="moves-location.PNG" alt="Moves Location" />
-        <div class="contenido">
-          <h3>Moves Location</h3>
-          <p>
-            Web de gestion migratoria con apartado de gestion de documentos para usuarios y
-            administradores.
           </p>
           <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Python</p>
           <a target="_blank"></a>
@@ -364,8 +380,8 @@
         <div class="contenido">
           <h3>Web de Gestión de Documentos de Clientes</h3>
           <p>
-            Plataforma para empresas enfocada en la gestión y organización de documentos de
-            clientes de forma centralizada.
+            Plataforma para empresas enfocada en la gestión y organización de documentos de clientes
+            de forma centralizada.
           </p>
           <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Python</p>
           <a target="_blank"></a>
@@ -374,12 +390,12 @@
 
       <!-- Trabajo 7: Mini Intérprete de Python -->
       <div class="trabajo-card">
-        <img src="mini-interprete-python.PNG" alt="Mini Interprete de Python" />
+        <img src="images/mini-interprete-python.PNG" alt="Mini Interprete de Python" />
         <div class="contenido">
           <h3>Mini Intérprete de Python en Web</h3>
           <p>
-            Aplicación web que permite ejecutar fragmentos de código Python desde el navegador en
-            un entorno simple e interactivo.
+            Aplicación web que permite ejecutar fragmentos de código Python desde el navegador en un
+            entorno simple e interactivo.
           </p>
           <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Python</p>
           <a target="_blank"></a>
@@ -393,11 +409,17 @@
         <p>
           Soy desarrollador web con enfoque en construir soluciones practicas, escalables y bien
           estructuradas. Tengo experiencia en front-end con HTML, CSS y JavaScript, y en back-end
-          con Python, Flask y MySQLpara crear aplicaciones funcionales, seguras y adaptadas a necesidades
-          reales. Considero que en lo personal destaco por mi capacidad para analizar problemas, proponer
-          mejoras continuas y trabajar con responsabilidad en cada etapa del desarrollo, desde la idea inicial hasta el producto final.
+          con Python, Flask y MySQLpara crear aplicaciones funcionales, seguras y adaptadas a
+          necesidades reales. Considero que en lo personal destaco por mi capacidad para analizar
+          problemas, proponer mejoras continuas y trabajar con responsabilidad en cada etapa del
+          desarrollo, desde la idea inicial hasta el producto final.
         </p>
       </div>
     </section>
+    <script>
+      function toggleInfo() {
+        document.querySelector('.destacado').classList.toggle('activo');
+      }
+    </script>
   </body>
 </html>
