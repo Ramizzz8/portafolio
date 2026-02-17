@@ -187,8 +187,76 @@
       .info-extra {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.5s ease, padding 0.3s ease;
-        padding: 0 20px;
+        transition: max-height 0.6s ease;
+      }
+
+      .info-extra.open {
+        max-height: 3000px; /* suficiente para todo el contenido */
+      }
+
+      .info-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 30px;
+        padding: 15px 0;
+        border-bottom: 1px;
+        margin: 20px;
+      }
+
+      .info-section.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .info-section .text {
+        flex: 1;
+      }
+
+      .info-section .text h4 {
+        margin-bottom: 10px;
+        color: #ffffff;
+      }
+
+      .info-section .text p {
+        line-height: 1.5;
+        color: #ffffff;
+      }
+
+      .info-section .image {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .info-section .image img {
+        width: calc(50% - 5px);
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .info-section {
+          flex-direction: column !important;
+        }
+        .info-section .image img {
+          width: 100%;
+        }
+      }
+
+      .img-gallery {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .img-gallery img {
+        width: calc(50% - 5px); /* Dos imágenes por fila */
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
       }
 
       .trabajo-card.activo .info-extra {
@@ -293,6 +361,7 @@
         <img src="images/javascript.png" alt="JS" />
         <img src="images/python-removebg-preview.png" alt="Python" />
         <img src="images/sqlogo.png" alt="SQL" />
+        <img src="images/php.png" alt="PHP" />
       </div>
     </section>
 
@@ -311,13 +380,123 @@
         </div>
 
         <div class="info-extra" id="infoExtra">
-          <p>
-            Esta plataforma incluye: ✔ Panel de administración ✔ Gestión documental ✔ Seguimiento en
-            tiempo real ✔ Notificaciones automatizadas
-          </p>
+          <!-- Descripción General -->
+          <div class="info-section row">
+            <div class="text">
+              <p>
+                Moves Location es una plataforma web especializada en la gestión integral de
+                procesos migratorios. Centraliza expedientes digitales, automatiza tareas
+                administrativas y permite el seguimiento en tiempo real de cada trámite, optimizando
+                tiempos y reduciendo errores operativos.
+              </p>
+            </div>
+            <div class="image">
+              <img src="images/2.png" alt="Dashboard Principal Moves Location" />
+            </div>
+          </div>
+
+          <!-- Panel de Administración -->
+          <div class="info-section row reverse">
+            <div class="text">
+              <h4>🗂 Panel de Administración</h4>
+              <p>
+                Panel intuitivo para visualizar métricas clave, estado de trámites activos y
+                vencimientos próximos, facilitando la gestión del sistema.
+              </p>
+            </div>
+            <div class="image">
+              <img src="images/3.png" alt="Panel Administrativo" />
+              <img src="images/4.png" alt="Estadísticas del Sistema" />
+            </div>
+          </div>
+
+          <!-- Gestión Documental -->
+          <div class="info-section row">
+            <div class="text">
+              <h4>📁 Gestión Documental</h4>
+              <p>
+                Permite la carga, validación y almacenamiento seguro de documentos migratorios. Cada
+                expediente mantiene un historial detallado y trazabilidad completa.
+              </p>
+            </div>
+            <div class="image">
+              <img src="images/5.png" alt="Gestión de Documentos" />
+              <img src="images/6.png" alt="Expediente Digital" />
+            </div>
+          </div>
+
+          <!-- Seguimiento en Tiempo Real -->
+          <div class="info-section row reverse">
+            <div class="text">
+              <h4>⏳ Seguimiento en Tiempo Real</h4>
+              <p>
+                Monitoreo del estado de solicitudes en tiempo real, con actualizaciones automáticas
+                y visualización del progreso de cada etapa.
+              </p>
+            </div>
+            <div class="image">
+              <img src="images/7.png" alt="Seguimiento de Trámites" />
+              <img src="images/8.png" alt="Estados de Solicitud" />
+            </div>
+          </div>
+
+          <!-- Notificaciones -->
+          <div class="info-section row">
+            <div class="text">
+              <h4>🔔 Notificaciones y Recordatorios</h4>
+              <p>
+                Alertas automáticas sobre vencimientos de visas, permisos y renovaciones, evitando
+                retrasos o sanciones.
+              </p>
+            </div>
+            <div class="image">
+              <img src="images/9.png" alt="Sistema de Notificaciones" />
+            </div>
+          </div>
+
+          <!-- Reportes -->
+          <div class="info-section row reverse">
+            <div class="text">
+              <h4>📊 Reportes y Control Empresarial</h4>
+              <p>
+                Generación de reportes personalizados para empresas y asesores migratorios,
+                facilitando decisiones basadas en datos.
+              </p>
+            </div>
+            <div class="image">
+              <img src="images/10.png" alt="Reportes Personalizados" />
+            </div>
+          </div>
+
+          <!-- Seguridad y Tecnología -->
+          <div class="info-section row">
+            <div class="text">
+              <h4>🔐 Seguridad y Tecnología</h4>
+              <p>
+                Desarrollado con HTML, CSS, JavaScript y Python, utilizando MySQL. Implementa
+                autenticación segura, control de roles y protección de datos sensibles.
+              </p>
+            </div>
+            <div class="image">
+              <img src="images/11.png" alt="Sistema de Seguridad" />
+            </div>
+          </div>
         </div>
       </div>
-
+      <!-- Trabajo 6: Gestion de Documentos de Clientes -->
+      <div class="trabajo-card">
+        <img src="images/Nova.PNG" alt="Gestion de Documentos de Clientes" />
+        <div class="contenido">
+          <h3>Web Novacapital SAS</h3>
+          <p>
+            Esta es una web empresarial realizada para una compañia de prestamos por
+            libranza,enfocada en la gestión y organización de documentos de clientes de forma
+            centralizada.
+          </p>
+          <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Python</p>
+          <a target="_blank"></a>
+        </div>
+      </div>
       <!-- Trabajo 1: Sistema de Gestión de Inventarios -->
       <div class="trabajo-card">
         <img src="images/inventario.PNG" alt="Sistema de Gestión de Inventarios" />
@@ -374,20 +553,6 @@
         </div>
       </div>
 
-      <!-- Trabajo 6: Gestion de Documentos de Clientes -->
-      <div class="trabajo-card">
-        <img src="documentos-clientes.PNG" alt="Gestion de Documentos de Clientes" />
-        <div class="contenido">
-          <h3>Web de Gestión de Documentos de Clientes</h3>
-          <p>
-            Plataforma para empresas enfocada en la gestión y organización de documentos de clientes
-            de forma centralizada.
-          </p>
-          <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Python</p>
-          <a target="_blank"></a>
-        </div>
-      </div>
-
       <!-- Trabajo 7: Mini Intérprete de Python -->
       <div class="trabajo-card">
         <img src="images/mini-interprete-python.PNG" alt="Mini Interprete de Python" />
@@ -407,18 +572,20 @@
       <h1>SOBRE MI</h1>
       <div class="sobre-mi-card">
         <p>
-          Soy desarrollador web con enfoque en construir soluciones practicas, escalables y bien
-          estructuradas. Tengo experiencia en front-end con HTML, CSS y JavaScript, y en back-end
-          con Python, Flask y MySQLpara crear aplicaciones funcionales, seguras y adaptadas a
-          necesidades reales. Considero que en lo personal destaco por mi capacidad para analizar
-          problemas, proponer mejoras continuas y trabajar con responsabilidad en cada etapa del
-          desarrollo, desde la idea inicial hasta el producto final.
+          Soy Andres Julian Ramirez, desarrollador web de front y back end, con un enfoque en
+          construir soluciones practicas, escalables y bien estructuradas. Tengo experiencia en
+          front-end con HTML, CSS y JavaScript, y en back-end con Python, Flask y MySQLpara crear
+          aplicaciones funcionales, seguras y adaptadas a necesidades reales. Considero que en lo
+          personal destaco por mi capacidad para analizar problemas, proponer mejoras continuas y
+          trabajar con responsabilidad en cada etapa del desarrollo, desde la idea inicial hasta el
+          producto final.
         </p>
       </div>
     </section>
     <script>
       function toggleInfo() {
-        document.querySelector('.destacado').classList.toggle('activo');
+        const info = document.getElementById('infoExtra');
+        info.classList.toggle('open'); // Añade o quita la clase .open
       }
     </script>
   </body>
